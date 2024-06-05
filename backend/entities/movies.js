@@ -1,7 +1,8 @@
 import typeorm from 'typeorm';
 
 const Movie = new typeorm.EntitySchema({
-  name: 'Movies',
+  name: 'Movie',
+  tableName: 'movies',
   columns: {
     id: {
       primary: true,
@@ -10,12 +11,26 @@ const Movie = new typeorm.EntitySchema({
     },
     title: {
       type: String,
-      unique: true,
     },
-    date: { type: Date },
-    synopsis: {type : String},
-    genres: {type : Array},
-    opinion: {type: Number}
+    overview: {
+      type: String,
+    },
+    release_date: {
+      type: String,
+    },
+    vote_average: {
+      type: Number,
+    },
+    tmdb_id: {
+      type: Number,
+    },
+  },
+  relations: {
+    genres: {
+      target: 'Genre',
+      type: 'many-to-many',
+      joinTable: true,
+    },
   },
 });
 
