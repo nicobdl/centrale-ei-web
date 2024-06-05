@@ -13,6 +13,9 @@ const Movie = new typeorm.EntitySchema({
       unique: true,
     },
     date: { type: Date },
+    synopsis: {type : String},
+    genres: {type : Array},
+    opinion: {type: Number}
   },
 });
 
