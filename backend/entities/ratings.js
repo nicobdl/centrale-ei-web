@@ -28,3 +28,5 @@ const Rating = new typeorm.EntitySchema({
       },
     },
   });
+
+  export default Rating
