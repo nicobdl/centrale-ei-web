@@ -13,6 +13,7 @@ function App() {
         <Route path="counter" element={<Counter />} />
         <Route path="users" element={<Users />} />
         <Route path="about" element={<About />} />
+        
       </Routes>
     </Layout>
   );
