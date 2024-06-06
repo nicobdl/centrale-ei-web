@@ -7,6 +7,8 @@ import moviesRouter from './routes/movies.js'
 import { routeNotFoundJsonHandler } from './services/routeNotFoundJsonHandler.js';
 import { jsonErrorHandler } from './services/jsonErrorHandler.js';
 import { appDataSource } from './datasource.js';
+import Genre from './entities/genre.js';
+import Movie from './entities/movie.js';
 
 appDataSource
   .initialize()
@@ -37,3 +39,40 @@ appDataSource
   .catch((err) => {
     console.error('Error during Data Source initialization:', err);
   });
+
+
+
+const app = express();
+app.use(express.json());
+
+// Saving genres
+app.post('/api/genres', async (req, res) => {
+  const genreRepository = appDataSource.getRepository(Genre);
+  const genres = req.body.genres;
+
+  try {
+    await genreRepository.save(genres);
+    res.status(201).json({ message: 'Genres successfully saved' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error saving genres' });
+  }
+});
+
+// Saving movies
+app.post('/api/movies', async (req, res) => {
+  const movieRepository = appDataSource.getRepository(Movie);
+  const movies = req.body.movies;
+
+  try {
+    await movieRepository.save(movies);
+    res.status(201).json({ message: 'Movies successfully saved' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error saving movies' });
+  }
+});
+
+app.listen(3001, () => {
+  console.log('Server running on port 3001');
+});
