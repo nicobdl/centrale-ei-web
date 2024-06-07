@@ -7,30 +7,30 @@ import axios from 'axios';
 async function fetchAndSaveMovies() {
     try {
         const genresResponse = await axios
-        .get('https://developer.themoviedb.org/reference/genre-movie-list', {
+        .get('https://api.themoviedb.org/3/genre/movie/list', {
           headers: {
             accept: 'application/json',
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjlmNjAwMzY4MzMzODNkNGIwYjNhNzJiODA3MzdjNCIsInN1YiI6IjY0NzA5YmE4YzVhZGE1MDBkZWU2ZTMxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Em7Y9fSW94J91rbuKFjDWxmpWaQzTitxRKNdQ5Lh2Eo'
       
           }
         });
-        const genresData = genresResponse.data
+        const genresData = genresResponse.data.genres
 
         const moviesResponse = await axios
-        .get('https://developer.themoviedb.org/reference/movie-top-rated-list', {
+        .get('https://api.themoviedb.org/3/movie/now_playing', {
           headers: {
             accept: 'application/json',
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjlmNjAwMzY4MzMzODNkNGIwYjNhNzJiODA3MzdjNCIsInN1YiI6IjY0NzA5YmE4YzVhZGE1MDBkZWU2ZTMxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Em7Y9fSW94J91rbuKFjDWxmpWaQzTitxRKNdQ5Lh2Eo'
-    
+            
           }
         });
-        console.log(moviesResponse)
-        const moviesData = moviesResponse.data
+      
+        const moviesData = moviesResponse.data.results
         console.log(moviesData)
 
         const genreRepository = getManager().getRepository(Genre);
         const movieRepository = getManager().getRepository(Movie);
-
+        
         for (const genreData of genresData) {
             if (genreData.name){const genre = genreRepository.create({
                 id: genreData.id,
@@ -42,7 +42,7 @@ async function fetchAndSaveMovies() {
         
         for (const movieData of moviesData) {
             if (movieData.title){const movie = movieRepository.create({
-            id : movieData.id, 
+            tmdb_id : movieData.id, 
             title : movieData.title,
             overview : movieData.overview,
             release_date : movieData.release_date,
