@@ -85,3 +85,15 @@ body {
   margin-top: 20px;
   background-color: #260101;
 }
+
+.welcome-text {
+  text-align: center;
+  margin-top: 50px; /* Ajustez la marge selon vos besoins */
+}
+
+.cinescope-text {
+  color: #fab554; /* Couleur jaune */
+  font-size: 2.5em; /* Taille de police */
+  font-weight: bold; /* Texte en gras */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée */
+}
