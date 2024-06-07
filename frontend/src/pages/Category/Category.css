@@ -1,0 +1,14 @@
+/* Home.css */
+
+.cat .App {
+  text-align: center;
+}
+
+.cat .App-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: #260101;
+}

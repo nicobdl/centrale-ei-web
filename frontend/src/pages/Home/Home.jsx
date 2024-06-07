@@ -14,6 +14,22 @@ function Home() {
         <MovieTable category="popular" category_title="Popular" />
       </div>
     </div>
+
+    // <div className="search-results-container">
+    //   {movieDetails.map((movie) => (
+    //     <div key={movie.id} className="search-results movie-card">
+    //       <img
+    //         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+    //         alt={movie.name}
+    //         className="search-results movie-poster"
+    //       />
+    //       <div className="search-results movie-info">
+    //         <h3>{movie.name}</h3>
+    //         <p>{movie.first_air_date}</p>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div>
   );
 }
 

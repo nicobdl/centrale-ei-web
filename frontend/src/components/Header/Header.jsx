@@ -23,21 +23,21 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
-      <nav className="nav">
+    <header className="head header">
+      <nav className="head nav">
         {/*barre de navigation avec les différents onglets*/}
-        <ul className="nav-list">
-          <li className="nav-item">
+        <ul className="head nav-list">
+          <li className="head nav-item">
             <Link to="/">Home</Link>
           </li>
-          <li className="nav-item">
+          <li className="head nav-item">
             <Link to="/category">Category</Link>
           </li>
-          <li className="nav-item">
+          <li className="head nav-item">
             <Link to="/about">About</Link>
           </li>
         </ul>
-        <div className="search-bar">
+        <div className="head search-bar">
           {/*barre de recherche*/}
           <input
             type="text"
@@ -46,7 +46,7 @@ const Header = () => {
             onChange={handleChange}
             onKeyDown={handleKeyDown}
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button type="head submit" onClick={handleSubmit}>
             Search
           </button>
         </div>

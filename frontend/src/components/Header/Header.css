@@ -1,4 +1,4 @@
-.header {
+.head .header {
   background-color: #260101;
   color: white;
   padding: 10px 0;
@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 
-.nav {
+.head .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,34 +17,34 @@
   padding: 0 20px;
 }
 
-.nav-list {
+.head .nav-list {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.nav-item {
+.head .nav-item {
   margin-right: 20px;
 }
 
-.nav-item a {
+.head .nav-item a {
   color: white;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
 }
 
-.nav-item a:hover {
+.head .nav-item a:hover {
   text-decoration: underline;
 }
 
-.search-bar {
+.head .search-bar {
   display: flex;
   align-items: center;
 }
 
-.search-bar input {
+.head .search-bar input {
   padding: 5px;
   font-size: 16px;
   border: none;
@@ -52,7 +52,7 @@
   margin-right: 10px;
 }
 
-.search-bar button {
+.head .search-bar button {
   padding: 5px 10px;
   font-size: 16px;
   border: none;
@@ -62,6 +62,6 @@
   cursor: pointer;
 }
 
-.search-bar button:hover {
+.head .search-bar button:hover {
   background-color: #777;
 }

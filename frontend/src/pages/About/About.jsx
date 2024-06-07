@@ -4,9 +4,9 @@ import logo from './logo_cinescope.png';
 
 function About() {
   return (
-    <div className="about-container">
-      <img src={logo} alt="CinéScope Logo" className="logo" />
-      <div className="about-content">
+    <div className="ab about-container">
+      <img src={logo} alt="CinéScope Logo" className="ab logo" />
+      <div className="ab about-content">
         <h1>À propos de CinéScope</h1>
         <p>
           CinéScope est une initiative innovante lancée par un groupe passionné
