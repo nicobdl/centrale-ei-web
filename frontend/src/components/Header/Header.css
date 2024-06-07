@@ -1,16 +1,67 @@
-.Header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 5px;
-  font-size: calc(10px + 2vmin);
+.header {
+  background-color: #260101;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-.Header-container > :not(:last-child) {
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold; /* Ajout de cette ligne pour rendre le texte en gras */
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
   margin-right: 10px;
 }
 
-.Link {
-  font-weight: 700;
+.search-bar button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #791115;
   color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #777;
 }

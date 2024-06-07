@@ -1,37 +1,87 @@
-.App {
+/* Home.css */
+
+body {
+  background-color: #260101;
+  color: #fab554;
+  font-family: Arial, sans-serif;
+}
+
+.home .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.home .flex-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centre les éléments verticalement */
+  justify-content: center; /* Centre les éléments horizontalement */
+  gap: 10px; /* Espace entre les éléments */
+}
+
+.home .App-logo {
+  height: 20vmin; /* Ajustement de la taille du logo */
+  width: auto; /* Maintenir le ratio d'aspect */
+  pointer-events: none;
+  animation: none !important; /* Supprimer l'animation de rotation */
+}
+
+.home .App-header {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Trois colonnes avec la première et la dernière colonne de taille automatique et la colonne du milieu extensible */
+  align-items: left; /* Centre les éléments verticalement */
+  background-color: #260101;
+}
+
+.home .App-link {
+  color: #791115;
+}
+
+.home .search-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.home .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Aligner la barre de recherche à droite */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home .search-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border-radius: 20px;
+  color: #000;
+}
+
+.home .search-box input::placeholder {
+  color: #791115;
+}
+
+.home .search-box button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  color: #791115;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home .search-box button:hover {
+  background-color: #f0f0f0;
+}
+
+.home .App-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: #260101;
 }

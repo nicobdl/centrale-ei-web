@@ -1,5 +1,5 @@
 .Layout-container {
-  background-color: #282c34;
+  background-color: #260101;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,4 +8,5 @@
 
 .Layout-content {
   padding: 20px;
+  background-color: #260101;
 }
