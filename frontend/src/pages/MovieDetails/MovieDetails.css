@@ -1,0 +1,56 @@
+/* Ajoutez un espace en haut pour compenser le header fixe */
+body {
+  background-color: #260101;
+  margin: 0;
+  padding-top: 60px; /* Ajustez cette valeur selon la hauteur de votre header */
+  font-family: Arial, sans-serif;
+}
+
+.movie-details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #791115;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 20px auto; /* Ajout d'une marge pour éviter que le conteneur soit collé en haut */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-poster {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
+.movie-info h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fab554; /* Couleur du texte */
+}
+
+.movie-overview {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #fab554; /* Couleur du texte */
+}
+
+.movie-details p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #fab554; /* Couleur du texte */
+}
+
+.movie-details p strong {
+  font-weight: bold;
+  color: #fab554; /* Couleur du texte en gras */
+}

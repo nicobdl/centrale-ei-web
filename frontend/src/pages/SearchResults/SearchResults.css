@@ -1,0 +1,55 @@
+body {
+  background-color: #260101;
+  color: #fab554;
+  font-family: Arial, sans-serif;
+}
+
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-results .movie-card {
+  background-color: #791115;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Ajoute un espace autour de chaque carte */
+  width: 18%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.search-results .movie-card {
+  /* margin-bottom: 30px; /*Espace en-dessous de chaque carte */
+  padding: 30px;
+}
+
+.search-results .movie-poster {
+  width: 100%;
+  height: auto;
+}
+
+.search-results .movie-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.search-results .movie-info h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #fab554;
+}
+
+.search-results .movie-info p {
+  font-size: 14px;
+  margin: 0;
+  color: #fab554;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 20px;
+}
