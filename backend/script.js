@@ -1,43 +1,44 @@
-// appdatasource - req http - create save
+// recuperer tmdb (genre puis film), 
+// requete post pour chaque elem
 
-import React, { useEffect } from 'react';
-import { useFetchGenres } from './services/useFetchGenres';
-import { useFetchMovies } from './services/useFetchMovies';
 import axios from 'axios';
 
-function Script() {
-  const { genre_list } = useFetchGenres();
-  const { movies_list } = useFetchMovies();
+async function Script() {
+  const genres = await axios
+  .get('https://developer.themoviedb.org/reference/genre-movie-list', {
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjlmNjAwMzY4MzMzODNkNGIwYjNhNzJiODA3MzdjNCIsInN1YiI6IjY0NzA5YmE4YzVhZGE1MDBkZWU2ZTMxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Em7Y9fSW94J91rbuKFjDWxmpWaQzTitxRKNdQ5Lh2Eo'
 
-  useEffect(() => {
-    {
-      axios.post('http://localhost:3001/api/genres', { genres: genre_list })
+    }
+  });
+  const movies = await axios
+    .get('https://developer.themoviedb.org/reference/movie-top-rated-list', {
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjlmNjAwMzY4MzMzODNkNGIwYjNhNzJiODA3MzdjNCIsInN1YiI6IjY0NzA5YmE4YzVhZGE1MDBkZWU2ZTMxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Em7Y9fSW94J91rbuKFjDWxmpWaQzTitxRKNdQ5Lh2Eo'
+
+      }
+    })
+    for (const genre of genres){
+    axios.post('http://localhost:3001/genres/new', genre)
         .then(response => {
           console.log(response.data.message);
         })
         .catch(error => {
           console.error('Error saving genres:', error);
         });
-    }
-  }, [genre_list]);
-
-  useEffect(() => {
-    {
-      axios.post('http://localhost:3001/api/movies', { movies: movies_list })
+      }
+    for (const movie of movies){
+      axios.post('http://localhost:3001/movies/new', movie)
         .then(response => {
           console.log(response.data.message);
         })
         .catch(error => {
           console.error('Error saving movies:', error);
         });
+      }
     }
-  }, [movies_list]);
 
-  return (
-    <div>
-      <h1>Fetching and Saving Data</h1>
-    </div>
-  );
-}
 
-export default Script;
+Script()
