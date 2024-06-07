@@ -22,7 +22,7 @@ body {
   width: 300px;
   height: auto;
   border-radius: 8px;
-  margin-right: 20px;
+  margin: 0 10 0 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,6 +36,24 @@ body {
   font-size: 32px;
   margin-bottom: 20px;
   color: #fab554; /* Couleur du texte */
+  display: flex;
+  align-items: center;
+}
+
+.movie-info h1 button {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #fab554; /* Couleur par défaut des boutons */
+  opacity: 0.5; /* Opacité par défaut des boutons */
+}
+
+.movie-info h1 button.selected {
+  font-weight: bold;
+  color: yellow; /* Couleur jaune lorsqu'il est sélectionné */
+  opacity: 1; /* Opacité pleine lorsqu'il est sélectionné */
 }
 
 .movie-overview {
