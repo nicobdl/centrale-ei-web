@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SearchResults.css';
 
@@ -45,17 +45,22 @@ function SearchResults() {
   return (
     <div className="search-results-container">
       {movieDetails.map((movie) => (
-        <div key={movie.id} className="search-results movie-card">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt={movie.name}
-            className="search-results movie-poster"
-          />
-          <div className="search-results movie-info">
-            <h3>{movie.name}</h3>
-            <p>{movie.first_air_date}</p>
+        <Link
+          to={`/movies/${movie.id}`}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <div key={movie.id} className="search-results movie-card">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.name}
+              className="search-results movie-poster"
+            />
+            <div className="search-results movie-info">
+              <h3>{movie.name}</h3>
+              <p>{movie.first_air_date}</p>
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

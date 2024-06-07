@@ -7,6 +7,7 @@ function MovieDetails() {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [error, setError] = useState(null);
+  const [userRating, setUserRating] = useState(0); // 0: default, 1: like, -1: dislike
 
   useEffect(() => {
     axios
@@ -27,6 +28,14 @@ function MovieDetails() {
       });
   }, [id]);
 
+  const handleLike = () => {
+    setUserRating(userRating === 1 ? 0 : 1);
+  };
+
+  const handleDislike = () => {
+    setUserRating(userRating === -1 ? 0 : -1);
+  };
+
   if (!movieDetails) {
     return <div>Loading...</div>;
   }
@@ -39,7 +48,25 @@ function MovieDetails() {
         className="movie-poster"
       />
       <div className="movie-info">
-        {movieDetails.original_name && <h1>{movieDetails.original_name}</h1>}
+        {movieDetails.original_name && (
+          <h1>
+            {movieDetails.original_name}
+            <button
+              className={`like-button ${userRating === 1 ? 'selected' : ''}`}
+              onClick={handleLike}
+            >
+              👍
+            </button>
+            <button
+              className={`dislike-button ${
+                userRating === -1 ? 'selected' : ''
+              }`}
+              onClick={handleDislike}
+            >
+              👎
+            </button>
+          </h1>
+        )}
         {movieDetails.overview && (
           <p className="movie-overview">
             <strong>Résumé :</strong> {movieDetails.overview}
