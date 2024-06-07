@@ -15,4 +15,4 @@ const Genre = new typeorm.EntitySchema({
     },
 });  
 
-export default Genre
+export default Genre;
