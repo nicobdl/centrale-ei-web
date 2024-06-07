@@ -4,7 +4,7 @@ import axios from 'axios';
 import './SearchResults.css';
 
 function SearchResults() {
-  const { query_name } = useParams();
+  const { query_name } = useParams(); //permet de récup le nom de la recherche (indiqué comme paramètre lorsque'on a def la route)
   const [movieDetails, setMovieDetails] = useState(null);
   const [error, setError] = useState(null);
 
@@ -39,7 +39,7 @@ function SearchResults() {
   }
 
   if (!movieDetails) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; //permet de laisser un temps de chargement avant d'afficher la page
   }
 
   return (
@@ -49,6 +49,8 @@ function SearchResults() {
           to={`/movies/${movie.id}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
+          {' '}
+          {/*permet d'envoyer l'utilsateur à l'adresse /movie/.. lorsqu'il clique sur la carte*/}
           <div key={movie.id} className="search-results movie-card">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

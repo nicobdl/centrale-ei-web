@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import logo from './logo_cinescope.png'; // Assurez-vous que le chemin vers votre logo est correct
+import logo from './logo_cinescope.png';
 
 function About() {
   return (

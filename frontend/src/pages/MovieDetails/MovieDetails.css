@@ -1,8 +1,7 @@
-/* Ajoutez un espace en haut pour compenser le header fixe */
 body {
   background-color: #260101;
   margin: 0;
-  padding-top: 60px; /* Ajustez cette valeur selon la hauteur de votre header */
+  padding-top: 60px;
   font-family: Arial, sans-serif;
 }
 

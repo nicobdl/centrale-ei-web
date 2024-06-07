@@ -20,6 +20,7 @@ function MovieTable({ category, category_title }) {
       })
       .then((response) => {
         const listMovies = response.data.results.map((movie) => ({
+          //on map sur les chaque élément de results, qui ici sont des json contenant des infos sur les films
           name: movie.original_name,
           first_air_date: movie.first_air_date,
           poster_path: movie.poster_path,
@@ -31,16 +32,18 @@ function MovieTable({ category, category_title }) {
         console.error('Erreur lors de la récupération des films:', error);
         setError('Erreur lors de la récupération des films.');
       });
-  }, [category, category_title]);
+  }, [category, category_title]); //liste des dépendances = liste des variables qui, si elles changent, déclenchent un nouveau rendu = liste des variables d'entrée ici
 
+  //création des boutons pour matérialiser les 4 volets qu'on affichera
   const renderTabs = () => {
     const tabs = [];
     for (let i = 0; i < 4; i++) {
       tabs.push(
+        //équivalent du .append() en python, ça ajoute un élément à la fin du tableau
         <button
           key={i}
-          className={`tab-button ${i === currentTab ? 'active' : ''}`}
-          onClick={() => setCurrentTab(i)}
+          className={`tab-button ${i === currentTab ? 'active' : ''}`} //Si l'index du bouton courant (i) est égal à currentTab, alors la classe active est ajoutée. Ca permet de styliser le bouton actif différemment des autres boutons.
+          onClick={() => setCurrentTab(i)} //on déclenche le changement de tab lorsque l'on clique sur le bouton
         />
       );
     }
@@ -58,6 +61,7 @@ function MovieTable({ category, category_title }) {
         onMouseEnter={() => setShowArrows(true)}
         onMouseLeave={() => setShowArrows(false)}
       >
+        {/*affichage des flèches pour naviguer ssi on survole la ligne*/}
         {showArrows && currentTab > 0 && (
           <button
             className="arrow left-arrow"

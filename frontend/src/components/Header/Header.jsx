@@ -25,6 +25,7 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="nav">
+        {/*barre de navigation avec les différents onglets*/}
         <ul className="nav-list">
           <li className="nav-item">
             <Link to="/">Home</Link>
@@ -37,6 +38,7 @@ const Header = () => {
           </li>
         </ul>
         <div className="search-bar">
+          {/*barre de recherche*/}
           <input
             type="text"
             placeholder="Search..."

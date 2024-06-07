@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
   return (
     <Link
       to={`/movies/${movie.id}`}
-      style={{ textDecoration: 'none', color: 'inherit' }}
+      style={{ textDecoration: 'none', color: 'inherit' }} //inherit permet au texte de garder la couleur de son élément parent et d'éviter la couleur bleu des lien hypertextes classiques
     >
       <div className="movie-card">
         <img

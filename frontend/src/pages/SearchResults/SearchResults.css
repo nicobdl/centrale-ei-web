@@ -15,14 +15,13 @@ body {
   background-color: #791115;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px; /* Ajoute un espace autour de chaque carte */
+  margin: 10px;
   width: 18%;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .search-results .movie-card {
-  /* margin-bottom: 30px; /*Espace en-dessous de chaque carte */
   padding: 30px;
 }
 

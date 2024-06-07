@@ -17,13 +17,6 @@ body {
   gap: 10px; /* Espace entre les éléments */
 }
 
-.home .App-logo {
-  height: 20vmin; /* Ajustement de la taille du logo */
-  width: auto; /* Maintenir le ratio d'aspect */
-  pointer-events: none;
-  animation: none !important; /* Supprimer l'animation de rotation */
-}
-
 .home .App-header {
   padding: 20px;
   display: grid;
@@ -88,7 +81,7 @@ body {
 
 .welcome-text {
   text-align: center;
-  margin-top: 50px; /* Ajustez la marge selon vos besoins */
+  margin-top: 50px;
 }
 
 .cinescope-text {
